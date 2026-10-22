@@ -1,192 +1,235 @@
-# **E-Commerce Sales Analytics**
+## E-Commerce Sales Analytics
 
+## 1. Project Overview
 
+The **E-Commerce Sales Analytics** project focuses on analysing e-commerce sales data to identify sales trends, evaluate product and regional performance, understand customer ratings, and generate actionable business insights.
 
-###### 1\. Project Overview
+The project uses Python for data cleaning, exploratory data analysis (EDA), and visualisation, along with Microsoft Power BI to develop an interactive dashboard. The findings support data-driven decision-making by highlighting revenue patterns, profitability, and opportunities for business improvement.
 
-&#x09;This project analyzes e-commerce sales data using Python, Pandas, Matplotlib, and Power BI. It explores sales performance, profitability, customer ratings, regional differences, and product-category trends.
+## 2. Problem Statement
 
+E-commerce businesses generate large amounts of transactional data, but raw data alone does not provide sufficient information for effective decision-making.
 
+The objective of this project is to transform raw sales data into meaningful insights by addressing the following questions:
 
-###### 2\. Problem Statement
+- Which product categories and individual products generate the highest sales?
+- Which regions contribute the most to sales and profit?
+- What patterns exist in sales, profit, discounts, and customer ratings?
+- How can data quality issues affect the reliability of business analysis?
+- What strategies can improve profitability and overall business performance?
 
-&#x09;Businesses need to understand which products and categories generate the most revenue, which regions perform well, and how sales relate to profit and customer satisfaction. This project uses data analysis and visualization to identify patterns and support informed business decisions.
+## 3. Dataset Description
 
+The project uses the `ecommerce_sales_week4.csv` dataset, containing 107 records and 11 columns before data cleaning.
 
+| Column | Description |
+|---|---|
+| `Order_ID` | Unique identifier for an order |
+| `Product` | Name of the product sold |
+| `Category` | Product category |
+| `Region` | Geographical sales region |
+| `Quantity` | Number of units sold |
+| `Unit_Price` | Price per unit |
+| `Sales` | Recorded sales amount |
+| `Profit` | Profit generated from the transaction |
+| `Discount_Percent` | Discount percentage applied |
+| `Customer_Age` | Customer age |
+| `Customer_Rating` | Customer rating for the purchase or experience |
 
-###### 3\. Dataset Description
+The dataset contains numerical and categorical variables, making it suitable for descriptive statistics, comparative analysis, correlation analysis, and visualisation.
 
-&#x09;The dataset contains e-commerce order information, including:
+**Data source:** `ecommerce_sales_week4.csv`, provided for the project assignment.
 
-&#x09;	- Order ID
+## 4. Tools and Technologies Used
 
-&#x09;	- Product and category
+- **Python:** Data analysis and processing.
+- **Pandas:** Data manipulation and cleaning.
+- **NumPy:** Numerical operations.
+- **Matplotlib:** Data visualisation.
+- **Seaborn:** Statistical visualisation, where applicable.
+- **Jupyter Notebook:** Interactive analysis and documentation.
+- **Microsoft Power BI:** Interactive dashboard development.
+- **Git and GitHub:** Version control and project repository management.
 
-&#x09;	- Region
+## 5. Data Cleaning Process
 
-&#x09;	- Quantity and unit price
+Data cleaning was performed to improve the consistency and reliability of the dataset before analysis.
 
-&#x09;	- Sales and profit
+The main steps included:
 
-&#x09;	- Discount percentage
+1. **Data inspection:** Examined the dataset structure, column names, data types, and summary statistics.
+2. **Missing-value detection:** Identified missing values in `Quantity`, `Sales`, and `Customer_Rating`.
+3. **Missing-value treatment:** Used median imputation for missing `Quantity` and `Customer_Rating` values. Missing `Sales` was calculated using `Quantity × Unit_Price`, where appropriate.
+4. **Duplicate removal:** Identified and removed one duplicate record.
+5. **Data validation:** Examined numerical values and potential anomalies, including negative unit prices and implausible customer ages, for further verification.
+6. **Cleaned dataset export:** Saved the processed dataset as `ecommerce_sales_cleaned.csv`.
 
-&#x09;	- Customer age
+After removing the duplicate record, the cleaned dataset contained 106 records.
 
-&#x09;	- Customer rating
+**Note:** Potential anomalies should be validated against the original data source before being corrected or excluded.
 
+## 6. Exploratory Data Analysis (EDA)
 
+Exploratory Data Analysis was conducted to understand the dataset's characteristics and uncover patterns relevant to business performance.
 
-&#x09;The original dataset contains 107 records and 11 columns. A cleaned version was prepared for analysis.
+The analysis included:
 
+- Reviewing descriptive statistics and frequency distributions.
+- Examining sales and profit across product categories.
+- Comparing regional sales and profitability.
+- Identifying leading products by sales and profit.
+- Analysing the distribution of sales and customer ratings.
+- Investigating the relationship between sales and profit.
+- Examining discount-related patterns and potential outliers.
 
+EDA provided the foundation for selecting meaningful visualisations and identifying areas requiring further business investigation.
 
-###### 4\. Tools and Technologies
+## 7. Data Visualisations
 
-&#x09;- Python: Data analysis and processing
+The project includes the following charts:
 
-&#x09;- Pandas: Data inspection and cleaning
+| Visualisation | Purpose |
+|---|---|
+| Sales by Category | Compares sales contributions across product categories |
+| Profit by Region | Evaluates regional profitability |
+| Distribution of Sales | Examines the spread and concentration of transaction values |
+| Discount Percentage vs. Sales | Investigates the relationship between discounts and sales |
+| Distribution of Customer Ratings | Understands customer-rating patterns |
+| Profit by Product | Identifies products contributing most to profit |
 
-&#x09;- Matplotlib: Data visualization
+The chart images are included in the repository as PNG files. These visualisations make patterns, differences, and potential anomalies easier to interpret.
 
-&#x09;- Jupyter Notebook: Interactive analysis
+## 8. Power BI Dashboard
 
-&#x09;- Power BI Desktop: Interactive dashboard
+An interactive dashboard was developed in Microsoft Power BI to present key business performance indicators and enable users to explore the dataset.
 
-&#x09;- Git and GitHub: Version control and project hosting
+### Key Performance Indicators (KPIs)
 
+- **Total Sales:** Sum of recorded sales.
+- **Total Profit:** Sum of recorded profit.
+- **Average Customer Rating:** Mean customer rating.
 
+### Dashboard Visuals
 
-###### 5\. Data Cleaning Process
+The dashboard contains:
 
-&#x09;The dataset was inspected for missing values and duplicate records. Missing quantity and customer-rating values were filled using the respective medians. Missing sales were calculated using quantity multiplied by unit price. Duplicate records were removed, and the cleaned dataset was saved as `ecommerce\_sales\_cleaned.csv`.
+- Sales by Category
+- Profit by Region
+- Sales by Product
+- Order Count by Customer Rating
 
+### Interactive Filters
 
+The dashboard includes slicers for:
 
-&#x09;Potentially invalid values, including a negative unit price and an implausible customer age, were also identified for validation.
+- Region
+- Category
+- Product
 
+These filters allow users to examine selected business segments and compare performance interactively.
 
+**Dashboard file:** `Ecommerce_sales_dashboard.pbix`
 
-###### 6\. Exploratory Data Analysis
+**Template file:** `Ecommerce_sales_dashboard.pbit`
 
-&#x09;The analysis included:
+The Power BI report can be opened using Microsoft Power BI Desktop.
 
-&#x09;	- Descriptive statistics
+## 9. Key Insights
 
-&#x09;	- Data type and missing-value inspection
+The analysis of the cleaned dataset produced the following findings:
 
-&#x09;	- Duplicate detection
+- **Total sales:** 157,971.00
+- **Total profit:** 17,247.05
+- **Average customer rating:** Approximately 4.37 out of 5
+- **Leading category:** Electronics, with sales of 143,928.00
+- **Leading region by sales:** North, with sales of 117,753.00
+- **Leading region by profit:** North, with profit of 8,957.90
+- **Leading product by sales:** Laptop, with sales of 110,790.00
+- **Sales-profit correlation:** Approximately 0.988, indicating a strong positive linear relationship in the analysed data.
 
-&#x09;	- Correlation analysis
+### Interpretation
 
-&#x09;	- Outlier detection using the Interquartile Range method
+Electronics accounts for the largest share of recorded sales, while the North region leads in both sales and profit. Laptop sales make a particularly large contribution to overall revenue.
 
-&#x09;	- Sales and profit comparisons by category, region, and product
+The strong positive correlation between sales and profit indicates that higher sales values tend to be associated with higher profit values in this dataset. However, correlation does not establish causation.
 
-&#x09;	- Customer-rating analysis
+The dataset also contains an unusually large laptop transaction, which may substantially influence aggregate results. Therefore, the findings should be interpreted alongside transaction-level analysis and data-quality checks.
 
+## 10. Business Recommendations
 
+Based on the analysis, the following recommendations are proposed:
 
-###### 7\. Data Visualizations
+1. **Strengthen high-performing product categories:** Review demand, margins, and stock availability for Electronics while avoiding excessive dependence on a single category.
+2. **Optimise regional strategies:** Investigate the factors behind the North region's performance and assess whether successful approaches can be adapted to other regions.
+3. **Evaluate product profitability:** Consider both sales volume and profit margin when making pricing, inventory, and promotional decisions.
+4. **Assess discount effectiveness:** Measure the impact of discounts on sales volume and profit before expanding promotional campaigns.
+5. **Improve customer experience:** Monitor customer ratings alongside complaints, returns, and service feedback to identify opportunities for improvement.
+6. **Validate unusual transactions:** Investigate unusually large sales, negative unit prices, and implausible customer ages before using the data for operational decisions.
+7. **Monitor KPIs regularly:** Use the Power BI dashboard to track sales, profit, customer ratings, and regional performance over time.
 
-&#x09;Six visualizations were created:
+These recommendations should be tested against more detailed transaction records and additional time periods before implementation.
 
-&#x09;	1. Total Sales by Product Category
+## 11. Conclusion
 
-&#x09;	2. Total Profit by Region
+The E-Commerce Sales Analytics project demonstrates how data analysis and visualisation can transform raw transactional data into actionable business information.
 
-&#x09;	3. Distribution of Sales
+Python and its data-analysis libraries were used to clean, explore, and visualise the dataset, while Power BI provided an interactive dashboard for monitoring key performance indicators and comparing business segments.
 
-&#x09;	4. Discount Percentage vs Sales
+The analysis identified Electronics as the leading sales category, the North region as the strongest regional contributor, and Laptops as the leading product by sales. It also highlighted the importance of validating outliers and questionable values before drawing conclusions.
 
-&#x09;	5. Distribution of Customer Ratings
+Overall, the project demonstrates the practical application of data cleaning, exploratory data analysis, visualisation, dashboard development, and business interpretation in an e-commerce context.
 
-&#x09;	6. Total Profit by Product
+## 12. Repository Structure
 
+```text
+Ecommerce-Sales-Analytics/
+│
+├── ecommerce_sales_week4.csv
+├── ecommerce_sales_cleaned.csv
+├── task2_analysis.ipynb
+├── task3_data_prep.ipynb
+├── task4_EDA.ipynb
+├── task5_visualization.ipynb
+│
+├── chart1_sales_by_category.png
+├── chart2_profit_by_region.png
+├── chart3_dist_sales.png
+├── chart4_discount%_vs_sales.png
+├── chart5_dist_customer_rating.png
+├── chart6_profit_by_product.png
+│
+├── Ecommerce_sales_dashboard.pbix
+├── Ecommerce_sales_dashboard.pbit
+├── E-commerce sales analytics.pptx
+├── README.md
+└── .gitignore
+```
 
+## 13. How to Use the Project
 
-&#x09;The chart images are included in the repository.
+1. Clone or download the repository from GitHub.
+2. Install Python and the required libraries.
+3. Open the Jupyter notebooks in Jupyter Notebook or VS Code.
+4. Run the notebooks in sequence, ensuring that the dataset paths match the local project directory.
+5. Open `Ecommerce_sales_dashboard.pbix` using Microsoft Power BI Desktop to explore the dashboard.
 
+Install the main Python libraries using:
 
+```bash
+pip install pandas numpy matplotlib seaborn jupyter
+```
 
-8\. Power BI Dashboard
+## 14. Project Deliverables
 
-&#x09;The interactive dashboard includes:
+- Original and cleaned datasets
+- Jupyter notebooks for analysis and visualisation
+- Exported chart images
+- Interactive Power BI dashboard and template
+- Project presentation
+- GitHub repository documentation
 
-&#x09;	- Total Sales KPI card
+---
 
-&#x09;	- Total Profit KPI card
-
-&#x09;	- Average Customer Rating KPI card
-
-&#x09;	- Sales by Category
-
-&#x09;	- Profit by Region
-
-&#x09;	- Sales by Product
-
-&#x09;	- Order Count by Customer Rating
-
-&#x09;	- Region, Category, and Product slicers
-
-
-
-&#x09;The dashboard allows users to filter and explore business metrics across different segments.
-
-
-
-9\. Key Business Insights
-
-&#x09;- Electronics is the largest revenue-generating category.
-
-&#x09;- The North region records the highest sales and profit in the dataset.
-
-&#x09;- Laptops generate the highest recorded sales and profit among products, influenced by an unusually large transaction.
-
-&#x09;- The average customer rating is approximately 4.37 out of 5.
-
-&#x09;- Sales and profit have a strong positive correlation.
-
-&#x09;- Outliers and invalid values require verification before business decisions are made.
-
-
-
-10\. Business Recommendations
-
-&#x09;1. Study the sales and profitability drivers of Electronics and the North region to identify practices that may benefit weaker-performing segments.
-
-&#x09;2. Investigate unusually large transactions and implement validation checks for negative prices, implausible customer ages, and unusual order quantities.
-
-&#x09;3. Evaluate discounts using both sales and profit metrics before changing pricing strategies.
-
-
-
-11\. Project Structure
-
-&#x09;- `README.md` — Project documentation
-
-&#x09;- `.gitignore`
-
-&#x09;- `ecommerce\_sales\_week4.csv` — Original dataset
-
-&#x09;- `ecommerce\_sales\_cleaned.csv` — Cleaned dataset
-
-&#x09;- `task3\_data\_prep.ipynb` — Data preparation
-
-&#x09;- `task4\_EDA.ipynb` — Exploratory data analysis
-
-&#x09;- `task5\_visualization.ipynb` — Data visualizations
-
-&#x09;- `chart1\_sales\_by\_category.png` to `chart6\_profit\_by\_product.png` — Chart images
-
-&#x09;- `Ecommerce\_Sales\_Dashboard.pbix` — Power BI dashboard
-
-
-
-12\. Conclusion
-
-&#x09;This project demonstrates a complete data analytics workflow, from dataset preparation and exploratory analysis to visualization, dashboard development, and business recommendations. The results provide a foundation for understanding e-commerce performance and identifying areas for further investigation.
-
-
-
-
-
+**Project:** E-Commerce Sales Analytics  
+**Domain:** Data Analytics and Business Intelligence  
+**Tools:** Python, Pandas, NumPy, Matplotlib, Seaborn, Jupyter Notebook, Power BI, Git and GitHub
